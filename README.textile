@@ -1,0 +1,12 @@
+Carlinoplate
+
+A rails3 boilerplate with the magic of Rick Carlino™
+Basically I added some bootstrap stuff ontop of the very popular "Rails3 Mongoid Devise" template. I'll probably add HAML later.
+
+
+
+MIT License
+"MIT License":http://www.opensource.org/licenses/mit-license
+
+original template: Copyright © 2012 Daniel Kehoe
+

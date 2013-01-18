@@ -1,0 +1,1979 @@
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-07 19:30:48 +0900
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (19.0029ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (10.6480ms)
+  Rendered home/index.html.erb within layouts/application (34.9ms)
+Compiled home.css  (1ms)  (pid 16390)
+Compiled application.css  (46ms)  (pid 16390)
+Compiled jquery.js  (22ms)  (pid 16390)
+Compiled jquery_ujs.js  (0ms)  (pid 16390)
+Compiled home.js  (174ms)  (pid 16390)
+Compiled application.js  (230ms)  (pid 16390)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 417ms (Views: 416.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-07 19:30:51 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (14.2ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 23ms (Views: 21.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-01-07 19:30:52 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 29.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-01-07 19:31:05 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FX8C5ZHJPBQQQcqcj5bKs33ZUDnEh2/vlYhTyFkD5w4=", "user"=>{"name"=>"fart", "email"=>"fart@hi.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"email"=>"fart@hi.com"} flags=[:slave_ok] limit=1 skip=0 fields={:_id=>1} (0.4361ms)
+  MOPED: 127.0.0.1:27017 INSERT       database=rails3_mongoid_devise_development collection=users documents=[{"_id"=>"50eaa3e90e8850e34c000001", "email"=>"fart@hi.com", "encrypted_password"=>"$2a$10$k0Gi0KYKU3paga7U/Z8wU.wocbkQwORisk.kNneS1v.hsneylUQm2", "sign_in_count"=>0, "name"=>"fart", "updated_at"=>2013-01-07 10:31:05 UTC, "created_at"=>2013-01-07 10:31:05 UTC}] flags=[] (0.1721ms)
+  MOPED: 127.0.0.1:27017 UPDATE       database=rails3_mongoid_devise_development collection=users selector={"_id"=>"50eaa3e90e8850e34c000001"} update={"$set"=>{"last_sign_in_at"=>2013-01-07 10:31:05 UTC, "current_sign_in_at"=>2013-01-07 10:31:05 UTC, "last_sign_in_ip"=>"127.0.0.1", "current_sign_in_ip"=>"127.0.0.1", "sign_in_count"=>1, "updated_at"=>2013-01-07 10:31:05 UTC}} flags=[] (0.1581ms)
+Redirected to http://localhost:3000/
+Completed 302 Found in 255ms
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-07 19:31:05 +0900
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50eaa3e90e8850e34c000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (1487.4790ms)
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.4671ms)
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 14ms (Views: 14.1ms)
+
+
+Started GET "/users/50eaa3e90e8850e34c000001" for 127.0.0.1 at 2013-01-08 00:02:02 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"50eaa3e90e8850e34c000001"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5822ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50eaa3e90e8850e34c000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.2439ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"_id"=>"50eaa3e90e8850e34c000001"} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.3099ms)
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 27.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-08 18:15:51 +0900
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (17.4599ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (243.3720ms)
+  Rendered home/index.html.erb within layouts/application (267.4ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 385ms (Views: 384.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-08 18:15:56 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (137.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 149ms (Views: 147.9ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2013-01-08 18:15:58 +0900
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/passwords/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.6ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2013-01-08 18:17:37 +0900
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/passwords/new.html.erb within layouts/application (2.5ms)
+Compiled bootstrap-responsive.min.css  (0ms)  (pid 1216)
+Compiled bootstrap.min.css  (0ms)  (pid 1216)
+Compiled application.css  (16ms)  (pid 1216)
+Compiled bootstrap.min.js  (0ms)  (pid 1216)
+Compiled application.js  (8ms)  (pid 1216)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 88ms (Views: 88.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-08 18:42:58 +0900
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (16.5288ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.2861ms)
+  Rendered home/index.html.erb within layouts/application (20.9ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 47ms (Views: 46.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-08 18:43:33 +0900
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.7451ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.4182ms)
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-08 18:46:30 +0900
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5982ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.2642ms)
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.7ms)
+
+
+Started GET "/users/50eaa3e90e8850e34c000001" for 127.0.0.1 at 2013-01-08 18:46:43 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"50eaa3e90e8850e34c000001"}
+Completed 401 Unauthorized in 6ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-08 18:46:43 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-08 18:58:42 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (32.5ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 56ms (Views: 55.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-01-08 18:59:00 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tzGR0xH2GHfqPFaQheDtegefY/hrkvAZ5z20Jtu0JZY=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (1.4219ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"email"=>"rick.carlino@gmail.com"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (14.6930ms)
+Completed 401 Unauthorized in 35ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tzGR0xH2GHfqPFaQheDtegefY/hrkvAZ5z20Jtu0JZY=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 92ms (Views: 8.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-08 18:59:04 +0900
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5851ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.2859ms)
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.7ms)
+
+
+Started GET "/users/50eaa3e90e8850e34c000001" for 127.0.0.1 at 2013-01-08 18:59:05 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"50eaa3e90e8850e34c000001"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-08 18:59:05 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-09 12:20:29 +0900
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (17.3111ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (244.3948ms)
+  Rendered home/index.html.erb within layouts/application (269.4ms)
+Completed 200 OK in 412ms (Views: 411.6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-09 12:23:17 +0900
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.6223ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.2942ms)
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 94ms (Views: 93.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-09 12:23:30 +0900
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.7241ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.4311ms)
+  Rendered home/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 13.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-09 12:24:08 +0900
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.7522ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.4847ms)
+  Rendered home/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 12.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-09 12:24:26 +0900
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5751ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.3748ms)
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 14.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:24:27 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (106.5ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 118ms (Views: 117.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-01-09 12:24:35 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 27.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-01-09 12:25:35 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 13.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-01-09 12:25:35 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 13ms (Views: 12.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:25:37 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 16.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:25:47 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-09 12:25:49 +0900
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.7732ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.3569ms)
+  Rendered home/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:25:50 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-01-09 12:25:51 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 13.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-09 12:30:26 +0900
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5660ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.3059ms)
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 10.2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:30:28 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:37:44 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (3.3ms)
+Compiled bootstrap.css  (0ms)  (pid 611)
+Compiled application.css  (32ms)  (pid 611)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 82ms (Views: 81.0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:38:24 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (2.7ms)
+Compiled bootstrap.css  (0ms)  (pid 611)
+Compiled application.css  (1ms)  (pid 611)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 47ms (Views: 46.0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:38:36 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (3.2ms)
+Compiled bootstrap.css  (0ms)  (pid 611)
+Compiled application.css  (1ms)  (pid 611)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 26ms (Views: 25.0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:40:30 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (2.7ms)
+Compiled bootstrap.css  (0ms)  (pid 611)
+Compiled application.css  (0ms)  (pid 611)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 183ms (Views: 182.3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:41:05 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (2.9ms)
+Compiled bootstrap.css  (0ms)  (pid 611)
+Compiled application.css  (0ms)  (pid 611)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 22.7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/img/glyphicons-halflings.png" for 127.0.0.1 at 2013-01-09 12:41:29 +0900
+
+ActionController::RoutingError (No route matches [GET] "/img/glyphicons-halflings.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:42:31 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (2.8ms)
+Compiled bootstrap.css  (0ms)  (pid 611)
+Compiled application.css  (0ms)  (pid 611)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 26ms (Views: 25.4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:43:01 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (4.7ms)
+Compiled bootstrap.css  (0ms)  (pid 611)
+Compiled application.css  (0ms)  (pid 611)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 79ms (Views: 77.9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-09 12:43:06 +0900
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (1.1520ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.3779ms)
+  Rendered home/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 31.8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:43:08 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-01-09 12:43:09 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:43:11 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-09 12:44:16 +0900
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.7472ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.2570ms)
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 10.0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-09 12:44:24 +0900
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.3967ms)
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:44:25 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:44:34 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.8421ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"email"=>"rick.carlino@gmail.com"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (17.1442ms)
+Completed 401 Unauthorized in 41ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 94ms (Views: 10.0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:45:46 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.4833ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"email"=>"rick.carlino@gmail.com"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.3128ms)
+Completed 401 Unauthorized in 2ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 94ms (Views: 10.4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:45:56 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5639ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"email"=>"rick.carlino@gmail.com"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.2692ms)
+Completed 401 Unauthorized in 2ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 93ms (Views: 9.7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:46:04 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5550ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"email"=>"rick.carlino@gmail.com"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.2871ms)
+Completed 401 Unauthorized in 2ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 93ms (Views: 9.8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:46:06 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:46:15 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5260ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"email"=>"rick.carlino@gmail.com"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.2921ms)
+Completed 401 Unauthorized in 2ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (29.5ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 119ms (Views: 35.9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:46:34 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5569ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"email"=>"rick.carlino@gmail.com"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.3569ms)
+Completed 401 Unauthorized in 2ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 98ms (Views: 11.5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:49:06 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5832ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"email"=>"rick.carlino@gmail.com"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.2871ms)
+Completed 401 Unauthorized in 2ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 94ms (Views: 10.1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-01-09 12:50:38 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5131ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"email"=>"rick.carlino@gmail.com"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.2880ms)
+Completed 401 Unauthorized in 2ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 93ms (Views: 10.3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-01-09 13:09:09 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5131ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"email"=>"rick.carlino@gmail.com"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.2849ms)
+Completed 401 Unauthorized in 2ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 93ms (Views: 9.9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-01-09 13:10:02 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5219ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"email"=>"rick.carlino@gmail.com"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.3338ms)
+Completed 401 Unauthorized in 2ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"email"=>"rick.carlino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/ricardocarlino/.rvm/gems/ruby-1.9.3-p125@rails3-mongoid-devise/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 92ms (Views: 8.5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-01-09 13:10:06 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started POST "/users" for 127.0.0.1 at 2013-01-09 13:10:28 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETfQbR0+6lAwsurX94GYwWUi5qNpDBWMFXbmYJqb0X0=", "user"=>{"name"=>"Rick", "email"=>"rick1@rick.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5991ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"email"=>"rick1@rick.com"} flags=[:slave_ok] limit=1 skip=0 fields={:_id=>1} (0.3221ms)
+  MOPED: 127.0.0.1:27017 INSERT       database=rails3_mongoid_devise_development collection=users documents=[{"_id"=>"50ecedb40e8850dfda000001", "email"=>"rick1@rick.com", "encrypted_password"=>"$2a$10$96V60tBplBssOZPDI0noSuKumatzE0Ty4T.gQh2ZnaMtyLOskbTb2", "sign_in_count"=>0, "name"=>"Rick", "updated_at"=>2013-01-09 04:10:28 UTC, "created_at"=>2013-01-09 04:10:28 UTC}] flags=[] (0.1421ms)
+  MOPED: 127.0.0.1:27017 UPDATE       database=rails3_mongoid_devise_development collection=users selector={"_id"=>"50ecedb40e8850dfda000001"} update={"$set"=>{"last_sign_in_at"=>2013-01-09 04:10:28 UTC, "current_sign_in_at"=>2013-01-09 04:10:28 UTC, "last_sign_in_ip"=>"127.0.0.1", "current_sign_in_ip"=>"127.0.0.1", "sign_in_count"=>1, "updated_at"=>2013-01-09 04:10:28 UTC}} flags=[] (0.2182ms)
+Redirected to http://localhost:3000/
+Completed 302 Found in 396ms
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-09 13:10:28 +0900
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.6299ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ecedb40e8850dfda000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.3247ms)
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.3622ms)
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 9.0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2013-01-09 13:10:32 +0900
+Processing by Devise::RegistrationsController#edit as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5891ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ecedb40e8850dfda000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.2298ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 13ms (Views: 10.3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-09 13:10:42 +0900
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ecedb40e8850dfda000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7181ms)
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.4458ms)
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-09 13:12:28 +0900
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.6402ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ecedb40e8850dfda000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.2749ms)
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.4959ms)
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 9.1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-09 13:12:29 +0900
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.6251ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ecedb40e8850dfda000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.2761ms)
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.4730ms)
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/50eaa3e90e8850e34c000001" for 127.0.0.1 at 2013-01-09 13:12:30 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"50eaa3e90e8850e34c000001"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5701ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ecedb40e8850dfda000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.2422ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"_id"=>"50eaa3e90e8850e34c000001"} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.2968ms)
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 6.8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/ico/favicon.png"):
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ricardocarlino/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/users/50eaa3e90e8850e34c000001" for 127.0.0.1 at 2013-01-09 13:12:57 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"50eaa3e90e8850e34c000001"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.7250ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ecedb40e8850dfda000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.3247ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"_id"=>"50eaa3e90e8850e34c000001"} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.4060ms)
+  Rendered users/show.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 13ms (Views: 9.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-18 17:38:14 -0500
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5734ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (2.4743ms)
+  Rendered home/index.html.erb within layouts/application (4.4ms)
+Compiled myspaces.css  (31ms)  (pid 15717)
+Compiled application.css  (42ms)  (pid 15717)
+Compiled jquery.js  (8ms)  (pid 15717)
+Compiled jquery_ujs.js  (0ms)  (pid 15717)
+Compiled myspaces.js  (253ms)  (pid 15717)
+Compiled application.js  (366ms)  (pid 15717)
+  Rendered layouts/_navigation.html.erb (2.7ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 540ms (Views: 539.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-18 17:39:35 -0500
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (2.2156ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.2635ms)
+  Rendered home/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 16.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-01-18 17:39:42 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (21.0ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 33.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-01-18 17:39:59 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o7fGEBHQyDFStZmi+M4fqQIsRJMn3mH49YKVybwyu5k=", "user"=>{"name"=>"m3talsmith", "email"=>"m3talsmith@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5720ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"email"=>"m3talsmith@gmail.com"} flags=[:slave_ok] limit=1 skip=0 fields={:_id=>1} (0.8738ms)
+  MOPED: 127.0.0.1:27017 INSERT       database=rails3_mongoid_devise_development collection=users documents=[{"_id"=>"50f9cf3fb733dd9259000001", "email"=>"m3talsmith@gmail.com", "encrypted_password"=>"$2a$10$mSKNIkj7Azcbbq8aL.HV1ePHUx64Jgeqz9PR2ewSSKhl1XBGSW3wS", "sign_in_count"=>0, "name"=>"m3talsmith", "updated_at"=>2013-01-18 22:39:59 UTC, "created_at"=>2013-01-18 22:39:59 UTC}] flags=[] (0.5591ms)
+  MOPED: 127.0.0.1:27017 UPDATE       database=rails3_mongoid_devise_development collection=users selector={"_id"=>"50f9cf3fb733dd9259000001"} update={"$set"=>{"last_sign_in_at"=>2013-01-18 22:39:59 UTC, "current_sign_in_at"=>2013-01-18 22:39:59 UTC, "last_sign_in_ip"=>"127.0.0.1", "current_sign_in_ip"=>"127.0.0.1", "sign_in_count"=>1, "updated_at"=>2013-01-18 22:39:59 UTC}} flags=[] (0.4928ms)
+Redirected to http://localhost.rebeloutpost.me:3000/
+Completed 302 Found in 165ms
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-18 17:39:59 -0500
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50f9cf3fb733dd9259000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.3326ms)
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.4125ms)
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-18 17:42:04 -0500
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.6342ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.3738ms)
+  Rendered home/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 13.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-18 17:42:12 -0500
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (1.5290ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.5624ms)
+  Rendered home/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 19.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-18 17:42:18 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered /home/m3talsmith/.rvm/gems/ruby-1.9.3-p194@subdomains/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (30.5ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 44ms (Views: 42.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-18 17:42:20 -0500
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5050ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.4249ms)
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 16.7ms)
+
+
+Started GET "/users/50f9cf3fb733dd9259000001" for 127.0.0.1 at 2013-01-18 17:42:23 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"50f9cf3fb733dd9259000001"}
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-18 17:42:23 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered /home/m3talsmith/.rvm/gems/ruby-1.9.3-p194@subdomains/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 35.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-18 17:42:26 -0500
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.8185ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.5500ms)
+  Rendered home/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 18.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-18 17:42:30 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered /home/m3talsmith/.rvm/gems/ruby-1.9.3-p194@subdomains/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 16.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-18 17:42:36 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered /home/m3talsmith/.rvm/gems/ruby-1.9.3-p194@subdomains/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_navigation.html.erb (3.9ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 58ms (Views: 56.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-01-18 17:42:48 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QE4Mx/Nq689ec8qBiEljRhXyjAMNEWUI/F/1mAoCbwg=", "user"=>{"email"=>"m3talsmith@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.8285ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"email"=>"m3talsmith@gmail.com"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7279ms)
+  MOPED: 127.0.0.1:27017 UPDATE       database=rails3_mongoid_devise_development collection=users selector={"_id"=>"50f9cf3fb733dd9259000001"} update={"$set"=>{"remember_created_at"=>2013-01-18 22:42:48 UTC, "updated_at"=>2013-01-18 22:42:48 UTC}} flags=[] (0.2980ms)
+  MOPED: 127.0.0.1:27017 UPDATE       database=rails3_mongoid_devise_development collection=users selector={"_id"=>"50f9cf3fb733dd9259000001"} update={"$set"=>{"current_sign_in_at"=>2013-01-18 22:42:48 UTC, "sign_in_count"=>2, "updated_at"=>2013-01-18 22:42:48 UTC}} flags=[] (0.3715ms)
+Redirected to http://lvh.me:3000/
+Completed 302 Found in 174ms
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-18 17:42:48 -0500
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50f9cf3fb733dd9259000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.9797ms)
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.7463ms)
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 16ms (Views: 15.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-18 17:50:03 -0500
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (2.1007ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.4792ms)
+  Rendered home/index.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 27.1ms)
+
+
+Started GET "/myspace" for 127.0.0.1 at 2013-01-18 17:50:09 -0500
+Processing by MyspacesController#index as HTML
+  Rendered myspaces/index.html.haml within layouts/application (2.0ms)
+  Rendered layouts/_navigation.html.erb (3.6ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 38ms (Views: 36.9ms)
+
+
+Started GET "/myspace" for 127.0.0.1 at 2013-01-18 17:50:58 -0500
+Processing by MyspacesController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.6301ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"name"=>"m3talsmith"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.4263ms)
+  Rendered myspaces/index.html.haml within layouts/application (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 10.9ms)
+
+
+Started GET "/myspace" for 127.0.0.1 at 2013-01-18 17:55:50 -0500
+Processing by MyspacesController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (1.8742ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"name"=>""}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (1.3764ms)
+  Rendered myspaces/index.html.haml within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 152ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: %h1 My Space(s)
+    2: 
+    3: = @user.name
+  app/views/myspaces/index.html.haml:3:in `_app_views_myspaces_index_html_haml___964380785_84284960'
+
+
+  Rendered /home/m3talsmith/.rvm/gems/ruby-1.9.3-p194@subdomains/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /home/m3talsmith/.rvm/gems/ruby-1.9.3-p194@subdomains/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /home/m3talsmith/.rvm/gems/ruby-1.9.3-p194@subdomains/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.9ms)
+
+
+Started GET "/myspace" for 127.0.0.1 at 2013-01-18 17:56:15 -0500
+Processing by MyspacesController#index as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"name"=>""}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.6707ms)
+  Rendered myspaces/index.html.haml within layouts/application (1.8ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50f9cf3fb733dd9259000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.6361ms)
+  Rendered layouts/_navigation.html.erb (3.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 20.5ms)
+
+
+Started GET "/myspace" for 127.0.0.1 at 2013-01-18 17:56:24 -0500
+Processing by MyspacesController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (2.2755ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"name"=>"m3talsmith"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.6967ms)
+  Rendered myspaces/m3talsmith/index.html.haml within layouts/application (2.0ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 16.3ms)
